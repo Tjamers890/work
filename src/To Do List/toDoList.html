@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./icon.jpeg" type="image/x-icon">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="../../dist/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body class=" bg-slate-200">
+    <div class=" mx-44 flex justify-center items-center h-screen p-10">
+        <div class="bg-white p-3 shadow-2xl h-60 w-96 flex flex-col ">
+            <input type="text"
+                class="block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300  rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                id="item" placeholder="Example label" />
+
+            <ul id="to-do-box" class="mt-3">
+                <li
+                    class=" bg-slate-900 text-white p-4 flex justify-between items-center cursor-pointer transition-all ease-in-out duration-700 hover:bg-slate-700 rounded-md ">
+                    <span>working Day</span>
+                    <i class="fa fa-times text-times"></i>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+</body>
+<script>
+    const item = document.querySelector("#item");
+    const toDoBox = document.querySelector("#to-do-box")
+    item.addEventListener("keyup", function (event) {
+        if (event.key == "Enter") {
+            console.log(this.value)
+            this.value = ""
+        }
+    })
+
+    const addToDo = (item) => {
+        const listitem = document.createElement("li")
+        listitem.innerHTML = `
+        
+        ${item}
+        <i class="fa fa-times text-times"></i>
+
+        `;
+
+        
+    }
+</script>
+
+</html>
